@@ -5,7 +5,7 @@ Servo myservo;
 int pos = 0;
 const int CLOSED_POS = 45;
 const int OPEN_POS = 120;
-int prev_button_state = HIGH;
+int prev_button_state = LOW;
 int prev_xbee_state = LOW;
 
 const int servo_pin = 17;
@@ -27,6 +27,22 @@ void setup()
   {
     blink_led(100, 1000);
   }
+  Serial.begin(9600);
+}
+
+void test_loop()
+{
+  int door_open = is_door_open();
+  int button_pressed = is_button_pressed();
+  int xbee = is_xbee_signaled();
+  
+  Serial.print("door open ");
+  Serial.println(door_open);
+  Serial.print("button pressed ");
+  Serial.println(button_pressed);
+  Serial.print("xbee ");
+  Serial.println(xbee);
+  blink_led(500, 500);
 }
 
 void loop() 
@@ -59,6 +75,7 @@ int is_button_pressed()
   if(prev_button_state == LOW and new_button_state == HIGH)
   {
       return_value = 1;
+      Serial.println("Button was pressed");
   }
   prev_button_state = new_button_state;
   return return_value;
@@ -71,7 +88,8 @@ int is_xbee_signaled()
   
   if(prev_xbee_state == LOW and new_xbee_state == HIGH)
   {
-      return_value = 1;
+     // return_value = 1;
+      Serial.println("XBee was signaled");
   }
   prev_xbee_state = new_xbee_state;
   return return_value;

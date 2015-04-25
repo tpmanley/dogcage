@@ -2,78 +2,112 @@
  
 Servo myservo;
 
-const int BUTTON_PRESSED = 1;
-const int BUTTON_NOT_PRESSED = 0;
-
-const int DOOR_OPEN = HIGH;
-const int DOOR_CLOSED = LOW;
-
 int pos = 0;
 const int CLOSED_POS = 45;
 const int OPEN_POS = 120;
-int prev_button_status = BUTTON_NOT_PRESSED;
+int prev_button_state = HIGH;
+int prev_xbee_state = LOW;
 
 const int servo_pin = 17;
-const int ledPin = 13;
+const int servo_power_pin = 12;
+const int led_pin = 13;
 const int button_pin = 15;
+const int xbee_pin = 6;
 const int doorsensor_pin = 10;
 
-void setup() {
-  pinMode(ledPin, OUTPUT);
+void setup() 
+{
+  pinMode(led_pin, OUTPUT);
   pinMode(button_pin, INPUT);
+  pinMode(xbee_pin, INPUT);
   pinMode(doorsensor_pin, INPUT);
-  digitalWrite(ledPin, LOW);
-  myservo.attach(servo_pin);
-  myservo.write(CLOSED_POS);
-}
-
-void loop() {
-  delay(500);
+  pinMode(servo_power_pin, OUTPUT);
   
-  if(digitalRead(doorsensor_pin) == DOOR_OPEN)
+  while(is_door_open())
   {
-    digitalWrite(ledPin, HIGH);
-    delay(500);
-    digitalWrite(ledPin, LOW);
-  }
-  else
-  {
-    check_triggers();
+    blink_led(100, 1000);
   }
 }
 
-void check_triggers() {  
-  if(prev_button_status == BUTTON_NOT_PRESSED)
+void loop() 
+{
+  blink_led(500, 500);
+  
+  if(is_button_pressed() || is_xbee_signaled())
   {
-    if(digitalRead(button_pin) == LOW)
+    if(is_door_open())
     {
-      digitalWrite(ledPin, HIGH);
-      prev_button_status = BUTTON_PRESSED;
-      
-      for(pos=CLOSED_POS; pos<=OPEN_POS; pos+=1)
-      {
-        myservo.write(pos);
-        delay(100);
-      }
-    }
-  }
-  else
-  {
-    if(digitalRead(button_pin) == HIGH)
-    {
-      prev_button_status = BUTTON_NOT_PRESSED;
-      for(pos=OPEN_POS; pos>=CLOSED_POS; pos-=1)
-      {
-        myservo.write(pos);
-        delay(100);
-      }
-      digitalWrite(ledPin, LOW);
+      close_door();
     }
     else
     {
-      digitalWrite(ledPin, LOW);
-      delay(200);
-      digitalWrite(ledPin, HIGH);
+      open_door();
     }
   }
 }
+
+int is_door_open()
+{
+  return (digitalRead(doorsensor_pin) == LOW);
+}
+
+int is_button_pressed()
+{
+  int new_button_state = digitalRead(button_pin);
+  int return_value = 0;
+  
+  if(prev_button_state == LOW and new_button_state == HIGH)
+  {
+      return_value = 1;
+  }
+  prev_button_state = new_button_state;
+  return return_value;
+}  
+
+int is_xbee_signaled()
+{
+  int new_xbee_state = digitalRead(xbee_pin);
+  int return_value = 0;
+  
+  if(prev_xbee_state == LOW and new_xbee_state == HIGH)
+  {
+      return_value = 1;
+  }
+  prev_xbee_state = new_xbee_state;
+  return return_value;
+}
+
+void open_door()
+{
+  digitalWrite(servo_power_pin, HIGH);
+  myservo.attach(servo_pin);
+  for(pos=CLOSED_POS; pos<=OPEN_POS; pos+=1)
+  {
+    myservo.write(pos);
+    delay(100);
+  }
+  myservo.detach();
+  digitalWrite(servo_power_pin, LOW);
+}
+
+void close_door()
+{
+  digitalWrite(servo_power_pin, HIGH);
+  myservo.attach(servo_pin);
+  for(pos=OPEN_POS; pos>=CLOSED_POS; pos-=1)
+  {
+    myservo.write(pos);
+    delay(100);
+  }
+  myservo.detach();
+  digitalWrite(servo_power_pin, LOW);
+} 
+  
+void blink_led(int off_time, int on_time)
+{
+   digitalWrite(led_pin, LOW);
+   delay(off_time);
+   digitalWrite(led_pin, HIGH);
+   delay(on_time);
+}
+

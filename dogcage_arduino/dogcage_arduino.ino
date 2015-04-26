@@ -5,8 +5,8 @@ Servo myservo;
 int pos = 0;
 const int CLOSED_POS = 45;
 const int OPEN_POS = 120;
-int prev_button_state = LOW;
-int prev_xbee_state = LOW;
+int prev_button_state = -1;
+int prev_xbee_state = -1;
 
 const int servo_pin = 17;
 const int servo_power_pin = 12;
@@ -18,10 +18,15 @@ const int doorsensor_pin = 10;
 void setup() 
 {
   pinMode(led_pin, OUTPUT);
-  pinMode(button_pin, INPUT);
+  pinMode(button_pin, INPUT_PULLUP);
   pinMode(xbee_pin, INPUT);
   pinMode(doorsensor_pin, INPUT);
   pinMode(servo_power_pin, OUTPUT);
+  
+  // Give inputs time to stabalize
+  delayMicroseconds(10);
+  prev_button_state = digitalRead(button_pin);
+  prev_xbee_state = digitalRead(xbee_pin);
   
   while(is_door_open())
   {
@@ -72,7 +77,7 @@ int is_button_pressed()
   int new_button_state = digitalRead(button_pin);
   int return_value = 0;
   
-  if(prev_button_state == LOW and new_button_state == HIGH)
+  if(prev_button_state == HIGH and new_button_state == LOW)
   {
       return_value = 1;
       Serial.println("Button was pressed");

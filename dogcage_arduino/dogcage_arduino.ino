@@ -17,10 +17,11 @@ const int doorsensor_pin = 10;
 
 void setup() 
 {
+  Serial.begin(9600);
   pinMode(led_pin, OUTPUT);
   pinMode(button_pin, INPUT_PULLUP);
   pinMode(xbee_pin, INPUT);
-  pinMode(doorsensor_pin, INPUT);
+  pinMode(doorsensor_pin, INPUT_PULLUP);
   pinMode(servo_power_pin, OUTPUT);
   
   // Give inputs time to stabalize
@@ -32,7 +33,7 @@ void setup()
   {
     blink_led(100, 1000);
   }
-  Serial.begin(9600);
+  pos = CLOSED_POS;
 }
 
 void test_loop()
@@ -69,7 +70,7 @@ void loop()
 
 int is_door_open()
 {
-  return (digitalRead(doorsensor_pin) == LOW);
+  return (digitalRead(doorsensor_pin) == HIGH);
 }
 
 int is_button_pressed()
@@ -104,7 +105,7 @@ void open_door()
 {
   digitalWrite(servo_power_pin, HIGH);
   myservo.attach(servo_pin);
-  for(pos=CLOSED_POS; pos<=OPEN_POS; pos+=1)
+  for(pos=CLOSED_POS; pos <= OPEN_POS; pos+=1)
   {
     myservo.write(pos);
     delay(100);
@@ -117,7 +118,7 @@ void close_door()
 {
   digitalWrite(servo_power_pin, HIGH);
   myservo.attach(servo_pin);
-  for(pos=OPEN_POS; pos>=CLOSED_POS; pos-=1)
+  for(pos=OPEN_POS; pos >= CLOSED_POS; pos-=1)
   {
     myservo.write(pos);
     delay(100);

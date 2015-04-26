@@ -1,0 +1,73 @@
+Cmp-Mod V01 Created by Cvpcb (2015-04-09 BZR 5588)-product   date = Saturday, April 25, 2015 'PMt' 10:54:15 PM
+
+BeginCmp
+TimeStamp = /553C53E8;
+Reference = C1;
+ValeurCmp = 10uF;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C5452;
+Reference = C2;
+ValeurCmp = 10uF;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C403C;
+Reference = CON1;
+ValeurCmp = BARREL_JACK;
+IdModule  = Connect:BARREL_JACK;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C509D;
+Reference = M1;
+ValeurCmp = XBEE;
+IdModule  = xbee_r1-XBEE;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C4802;
+Reference = P1;
+ValeurCmp = Door Sensor;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C4577;
+Reference = P2;
+ValeurCmp = Servo;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x03;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C49B0;
+Reference = Q1;
+ValeurCmp = TIP120;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C46F2;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = Buttons_Switches_ThroughHole:SW_PUSH;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C5246;
+Reference = U1;
+ValeurCmp = LD1117S33TR;
+IdModule  = SMD_Packages:SOT-223;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C448F;
+Reference = U2;
+ValeurCmp = TEENSYLC;
+IdModule  = MODULE;
+EndCmp
+
+EndListe

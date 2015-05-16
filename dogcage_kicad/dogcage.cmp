@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Thursday, May 14, 2015 'PMt' 10:15:29 PM
+Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, May 16, 2015 'PMt' 01:52:32 PM
 
 BeginCmp
 TimeStamp = /553C53E8;
@@ -11,7 +11,7 @@ BeginCmp
 TimeStamp = /553C5452;
 Reference = C2;
 ValeurCmp = 10uF;
-IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_20x10mm_RM5;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_11x5mm_RM2;
 EndCmp
 
 BeginCmp
@@ -102,14 +102,14 @@ BeginCmp
 TimeStamp = /553D19C7;
 Reference = R1;
 ValeurCmp = 330;
-IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM20mm;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
 EndCmp
 
 BeginCmp
 TimeStamp = /553C46F2;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = Buttons_Switches_ThroughHole:SW_PUSH;
+IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
 EndCmp
 
 BeginCmp

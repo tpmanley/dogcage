@@ -1,17 +1,17 @@
-Cmp-Mod V01 Created by Cvpcb (2015-04-09 BZR 5588)-product   date = Saturday, April 25, 2015 'PMt' 10:54:15 PM
+Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Thursday, May 14, 2015 'PMt' 10:15:29 PM
 
 BeginCmp
 TimeStamp = /553C53E8;
 Reference = C1;
 ValeurCmp = 10uF;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_11x5mm_RM2;
 EndCmp
 
 BeginCmp
 TimeStamp = /553C5452;
 Reference = C2;
 ValeurCmp = 10uF;
-IdModule  = ;
+IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_20x10mm_RM5;
 EndCmp
 
 BeginCmp
@@ -22,10 +22,24 @@ IdModule  = Connect:BARREL_JACK;
 EndCmp
 
 BeginCmp
-TimeStamp = /553C509D;
+TimeStamp = /553D18EC;
+Reference = D1;
+ValeurCmp = Assoc LED;
+IdModule  = LEDs:LED-3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /5541A2D5;
+Reference = D2;
+ValeurCmp = 1N4001;
+IdModule  = Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10;
+EndCmp
+
+BeginCmp
+TimeStamp = /5542EC6F;
 Reference = M1;
 ValeurCmp = XBEE;
-IdModule  = xbee_r1-XBEE;
+IdModule  = modules:xbee;
 EndCmp
 
 BeginCmp
@@ -43,10 +57,52 @@ IdModule  = Pin_Headers:Pin_Header_Straight_1x03;
 EndCmp
 
 BeginCmp
+TimeStamp = /5542ECE2;
+Reference = P3;
+ValeurCmp = CONN_01X10;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x10;
+EndCmp
+
+BeginCmp
+TimeStamp = /5542F1C9;
+Reference = P4;
+ValeurCmp = CONN_01X10;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x10;
+EndCmp
+
+BeginCmp
+TimeStamp = /55453354;
+Reference = P5;
+ValeurCmp = CONN_01X14;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x14;
+EndCmp
+
+BeginCmp
+TimeStamp = /55454EDE;
+Reference = P6;
+ValeurCmp = CONN_01X05;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x05;
+EndCmp
+
+BeginCmp
+TimeStamp = /55453273;
+Reference = P7;
+ValeurCmp = CONN_01X14;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x14;
+EndCmp
+
+BeginCmp
 TimeStamp = /553C49B0;
 Reference = Q1;
 ValeurCmp = TIP120;
 IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = /553D19C7;
+Reference = R1;
+ValeurCmp = 330;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM20mm;
 EndCmp
 
 BeginCmp
@@ -67,7 +123,7 @@ BeginCmp
 TimeStamp = /553C448F;
 Reference = U2;
 ValeurCmp = TEENSYLC;
-IdModule  = MODULE;
+IdModule  = modules:Teensy-3.1;
 EndCmp
 
 EndListe

@@ -3,6 +3,8 @@
 # Temporary files
 *.000
 *.bak
+_autosave*
+*-bak
 
 # Netlist files (exported from Eeschema)
 *.net

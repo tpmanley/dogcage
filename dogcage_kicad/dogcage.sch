@@ -101,17 +101,6 @@ F 3 "" H 7450 5150 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L SW_PUSH SW1
-U 1 1 553C46F2
-P 8850 3350
-F 0 "SW1" H 9000 3460 50  0000 C CNN
-F 1 "SW_PUSH" H 8850 3270 50  0000 C CNN
-F 2 "Buttons_Switches_ThroughHole:SW_PUSH" H 8850 3350 60  0001 C CNN
-F 3 "" H 8850 3350 60  0000 C CNN
-	1    8850 3350
-	0    1    1    0   
-$EndComp
-$Comp
 L GND #PWR03
 U 1 1 553C47AE
 P 8850 3800
@@ -206,7 +195,7 @@ U 1 1 553C5452
 P 4450 1400
 F 0 "C2" H 4475 1500 50  0000 L CNN
 F 1 "10uF" H 4475 1300 50  0000 L CNN
-F 2 "Capacitors_Elko_ThroughHole:Elko_vert_20x10mm_RM5" H 4488 1250 30  0001 C CNN
+F 2 "Capacitors_Elko_ThroughHole:Elko_vert_11x5mm_RM2" H 4488 1250 30  0001 C CNN
 F 3 "" H 4450 1400 60  0000 C CNN
 	1    4450 1400
 	1    0    0    -1  
@@ -302,13 +291,13 @@ $EndComp
 $Comp
 L LED D1
 U 1 1 553D18EC
-P 4000 4650
-F 0 "D1" H 4000 4750 50  0000 C CNN
-F 1 "Assoc LED" H 4000 4550 50  0000 C CNN
-F 2 "LEDs:LED-3MM" H 4000 4650 60  0001 C CNN
-F 3 "" H 4000 4650 60  0000 C CNN
-	1    4000 4650
-	0    1    1    0   
+P 4000 4700
+F 0 "D1" H 4000 4800 50  0000 C CNN
+F 1 "Assoc LED" H 4000 4600 50  0000 C CNN
+F 2 "LEDs:LED-3MM" H 4000 4700 60  0001 C CNN
+F 3 "" H 4000 4700 60  0000 C CNN
+	1    4000 4700
+	0    -1   -1   0   
 $EndComp
 $Comp
 L GND #PWR015
@@ -327,7 +316,7 @@ U 1 1 553D19C7
 P 4000 4200
 F 0 "R1" V 4080 4200 50  0000 C CNN
 F 1 "330" V 4000 4200 50  0000 C CNN
-F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM20mm" V 3930 4200 30  0001 C CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3930 4200 30  0001 C CNN
 F 3 "" H 4000 4200 30  0000 C CNN
 	1    4000 4200
 	1    0    0    -1  
@@ -354,15 +343,21 @@ Wire Wire Line
 Wire Wire Line
 	7450 4150 7750 4150
 Wire Wire Line
-	4250 1150 4800 1150
+	4250 1150 4450 1150
+Wire Wire Line
+	4450 1150 4800 1150
 Wire Wire Line
 	4800 1150 4800 1000
 Wire Wire Line
-	3850 1450 3850 1700
+	3850 1450 3850 1600
+Wire Wire Line
+	3850 1600 3850 1700
 Wire Wire Line
 	3250 1550 3250 1600
 Wire Wire Line
-	3250 1600 4450 1600
+	3250 1600 3850 1600
+Wire Wire Line
+	3850 1600 4450 1600
 Connection ~ 3850 1600
 Wire Wire Line
 	4450 1600 4450 1550
@@ -383,9 +378,9 @@ Connection ~ 4800 1150
 Wire Wire Line
 	6350 3450 6350 3800
 Wire Wire Line
-	4000 5000 4000 4850
+	4000 5000 4000 4900
 Wire Wire Line
-	4000 4350 4000 4450
+	4000 4350 4000 4500
 Wire Wire Line
 	1700 1150 1750 1150
 Wire Wire Line
@@ -395,7 +390,9 @@ Wire Wire Line
 Wire Wire Line
 	2950 1000 2950 1150
 Wire Wire Line
-	2950 1150 3450 1150
+	2950 1150 3250 1150
+Wire Wire Line
+	3250 1150 3450 1150
 Wire Wire Line
 	3250 1250 3250 1150
 Connection ~ 3250 1150
@@ -425,7 +422,9 @@ F 3 "" H 1300 3400 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1500 2950 1950 2950
+	1500 2950 1750 2950
+Wire Wire Line
+	1750 2950 1950 2950
 Wire Wire Line
 	1500 3050 1950 3050
 Wire Wire Line
@@ -454,7 +453,9 @@ F 3 "" H 4500 3400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3750 3450 4300 3450
+	3750 3450 4000 3450
+Wire Wire Line
+	4000 3450 4300 3450
 Wire Wire Line
 	4000 3450 4000 4050
 Connection ~ 4000 3450
@@ -510,7 +511,9 @@ $EndComp
 Wire Wire Line
 	6350 2400 6350 3350
 Wire Wire Line
-	6050 2400 6650 2400
+	6050 2400 6350 2400
+Wire Wire Line
+	6350 2400 6650 2400
 Wire Wire Line
 	6650 2600 6050 2600
 Wire Wire Line
@@ -534,7 +537,9 @@ Wire Wire Line
 Wire Wire Line
 	6650 1400 6050 1400
 Wire Wire Line
-	8650 2400 9100 2400
+	8650 2400 8850 2400
+Wire Wire Line
+	8850 2400 9100 2400
 Wire Wire Line
 	8850 3050 8850 2400
 Connection ~ 8850 2400
@@ -563,7 +568,9 @@ Wire Wire Line
 Wire Wire Line
 	8650 1400 9100 1400
 Wire Wire Line
-	8650 1300 9100 1300
+	8650 1300 8850 1300
+Wire Wire Line
+	8850 1300 9100 1300
 Connection ~ 8850 1300
 Wire Wire Line
 	8850 3800 8850 3650
@@ -581,7 +588,9 @@ $EndComp
 Wire Wire Line
 	6650 4750 7150 4750
 Wire Wire Line
-	7450 3100 7450 3200
+	7450 3100 7450 3150
+Wire Wire Line
+	7450 3150 7450 3200
 Wire Wire Line
 	7450 3150 7300 3150
 Wire Wire Line
@@ -596,12 +605,16 @@ Wire Wire Line
 Wire Wire Line
 	7850 3100 7850 3200
 Wire Wire Line
-	1500 3850 1950 3850
+	1500 3850 1750 3850
+Wire Wire Line
+	1750 3850 1950 3850
 Wire Wire Line
 	1750 3850 1750 4050
 Connection ~ 1750 3850
 Wire Wire Line
-	6050 1300 6650 1300
+	6050 1300 6350 1300
+Wire Wire Line
+	6350 1300 6650 1300
 Wire Wire Line
 	6350 1300 6350 950 
 Wire Wire Line
@@ -610,4 +623,15 @@ Wire Wire Line
 	5550 950  5550 1450
 Connection ~ 6350 1300
 Connection ~ 6350 2400
+$Comp
+L SW_PUSH SW1
+U 1 1 553C46F2
+P 8850 3350
+F 0 "SW1" H 9000 3460 50  0000 C CNN
+F 1 "SW_PUSH" H 8850 3270 50  0000 C CNN
+F 2 "Buttons_Switches_ThroughHole:SW_PUSH_SMALL" H 8850 3350 60  0001 C CNN
+F 3 "" H 8850 3350 60  0000 C CNN
+	1    8850 3350
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

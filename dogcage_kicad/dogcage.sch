@@ -480,12 +480,8 @@ Wire Wire Line
 Wire Wire Line
 	1750 2750 1750 2950
 Connection ~ 1750 2950
-Text Label 3750 3750 0    60   ~ 0
-XBEE_DIO7
 Wire Wire Line
 	6650 2000 6050 2000
-Text Label 6100 2000 0    60   ~ 0
-XBEE_DIO7
 $Comp
 L CONN_01X14 P7
 U 1 1 55453273
@@ -634,4 +630,8 @@ F 3 "" H 8850 3350 60  0000 C CNN
 	1    8850 3350
 	0    1    1    0   
 $EndComp
+Text Label 8650 2600 0    60   ~ 0
+XBEE_CTL
+Text Label 1500 3750 0    60   ~ 0
+XBEE_CTL
 $EndSCHEMATC

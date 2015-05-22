@@ -20,13 +20,13 @@
   )
 
   (layers
-    (0 F.Cu signal)
-    (31 B.Cu signal)
-    (36 B.SilkS user)
+    (0 F.Cu signal hide)
+    (31 B.Cu signal hide)
+    (36 B.SilkS user hide)
     (37 F.SilkS user)
-    (38 B.Mask user)
-    (39 F.Mask user)
-    (44 Edge.Cuts user)
+    (38 B.Mask user hide)
+    (39 F.Mask user hide)
+    (44 Edge.Cuts user hide)
   )
 
   (setup
@@ -446,7 +446,7 @@
     )
   )
 
-  (module Pin_Headers:Pin_Header_Straight_1x03 (layer F.Cu) (tedit 555EAB5E) (tstamp 5558E611)
+  (module Pin_Headers:Pin_Header_Straight_1x03 (layer F.Cu) (tedit 555EB1DA) (tstamp 5558E611)
     (at 151.13 167.64)
     (descr "Through hole pin header")
     (tags "pin header")

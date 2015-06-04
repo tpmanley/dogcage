@@ -5,6 +5,7 @@
 *.bak
 _autosave*
 *-bak
+*~.skp
 
 # Netlist files (exported from Eeschema)
 *.net

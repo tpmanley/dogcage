@@ -9,11 +9,11 @@ int prev_button_state = -1;
 int prev_xbee_state = -1;
 
 const int servo_pin = 17;
-const int servo_power_pin = 12;
+const int servo_power_pin = 26;
 const int led_pin = 13;
-const int button_pin = 15;
-const int xbee_pin = 6;
-const int doorsensor_pin = 10;
+const int button_pin = 11;
+const int xbee_pin = 23;
+const int doorsensor_pin = 12;
 
 void setup() 
 {
@@ -29,11 +29,13 @@ void setup()
   prev_button_state = digitalRead(button_pin);
   prev_xbee_state = digitalRead(xbee_pin);
   
+  Serial.println("Waiting for door to close...");
   while(is_door_open())
   {
     blink_led(100, 1000);
   }
   pos = CLOSED_POS;
+  Serial.println("Door closed");
 }
 
 void test_loop()
@@ -103,6 +105,7 @@ int is_xbee_signaled()
 
 void open_door()
 {
+  Serial.println("Opening door...");
   digitalWrite(servo_power_pin, HIGH);
   myservo.attach(servo_pin);
   for(pos=CLOSED_POS; pos <= OPEN_POS; pos+=1)
@@ -116,6 +119,7 @@ void open_door()
 
 void close_door()
 {
+  Serial.println("Closing door...");
   digitalWrite(servo_power_pin, HIGH);
   myservo.attach(servo_pin);
   for(pos=OPEN_POS; pos >= CLOSED_POS; pos-=1)

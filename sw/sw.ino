@@ -97,7 +97,7 @@ int is_xbee_signaled()
   
   if(prev_xbee_state == LOW and new_xbee_state == HIGH)
   {
-     // return_value = 1;
+      return_value = 1;
       Serial.println("XBee was signaled");
   }
   prev_xbee_state = new_xbee_state;

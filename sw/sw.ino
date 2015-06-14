@@ -3,7 +3,7 @@
 Servo myservo;
 
 int pos = 0;
-const int CLOSED_POS = 45;
+const int CLOSED_POS = 65;
 const int OPEN_POS = 120;
 int prev_button_state = -1;
 int prev_xbee_state = -1;

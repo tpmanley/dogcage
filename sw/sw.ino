@@ -72,7 +72,8 @@ void loop()
 
 int is_door_open()
 {
-  return (digitalRead(doorsensor_pin) == HIGH);
+  return 0;
+  //return (digitalRead(doorsensor_pin) == HIGH);
 }
 
 int is_button_pressed()

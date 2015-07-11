@@ -5,11 +5,15 @@ Servo myservo;
 int pos = 0;
 const int CLOSED_POS = 65;
 const int OPEN_POS = 120;
+const int UNLOCKED_POS = 70;
+const int LOCKED_POS = 0;
 int prev_button_state = -1;
 int prev_xbee_state = -1;
 
-const int servo_pin = 17;
-const int servo_power_pin = 26;
+const int door_ctl_pin = 17;
+const int door_pwr_pin = 26;
+const int lock_ctl_pin = 17; // Same pin as door_ctl
+const int lock_pwr_pin = 13;
 const int led_pin = 13;
 const int button_pin = 11;
 const int xbee_pin = 23;
@@ -22,8 +26,15 @@ void setup()
   pinMode(button_pin, INPUT_PULLUP);
   pinMode(xbee_pin, INPUT);
   pinMode(doorsensor_pin, INPUT_PULLUP);
-  pinMode(servo_power_pin, OUTPUT);
   
+  pinMode(door_ctl_pin, OUTPUT);
+  pinMode(door_pwr_pin, OUTPUT);
+  digitalWrite(door_pwr_pin, LOW);
+
+  pinMode(lock_ctl_pin, OUTPUT);
+  pinMode(lock_pwr_pin, OUTPUT);
+  digitalWrite(lock_pwr_pin, LOW);
+
   // Give inputs time to stabalize
   delayMicroseconds(10);
   prev_button_state = digitalRead(button_pin);
@@ -65,6 +76,7 @@ void loop()
     }
     else
     {
+      unlock_door();
       open_door();
     }
   }
@@ -104,32 +116,46 @@ int is_xbee_signaled()
   return return_value;
 }
 
+void unlock_door()
+{
+  Serial.println("Unlocking door...");
+  digitalWrite(lock_pwr_pin, HIGH);
+  myservo.attach(lock_ctl_pin);
+  for(pos=LOCKED_POS; pos<=UNLOCKED_POS; pos+=1)
+  {
+    myservo.write(pos);
+    delay(10);
+  }
+  myservo.detach();
+  digitalWrite(lock_pwr_pin, LOW);
+}
+
 void open_door()
 {
   Serial.println("Opening door...");
-  digitalWrite(servo_power_pin, HIGH);
-  myservo.attach(servo_pin);
+  digitalWrite(door_pwr_pin, HIGH);
+  myservo.attach(door_ctl_pin);
   for(pos=CLOSED_POS; pos <= OPEN_POS; pos+=1)
   {
     myservo.write(pos);
     delay(100);
   }
   myservo.detach();
-  digitalWrite(servo_power_pin, LOW);
+  digitalWrite(door_pwr_pin, LOW);
 }
 
 void close_door()
 {
   Serial.println("Closing door...");
-  digitalWrite(servo_power_pin, HIGH);
-  myservo.attach(servo_pin);
+  digitalWrite(door_pwr_pin, HIGH);
+  myservo.attach(door_ctl_pin);
   for(pos=OPEN_POS; pos >= CLOSED_POS; pos-=1)
   {
     myservo.write(pos);
     delay(100);
   }
   myservo.detach();
-  digitalWrite(servo_power_pin, LOW);
+  digitalWrite(door_pwr_pin, LOW);
 } 
   
 void blink_led(int off_time, int on_time)

@@ -1,4 +1,4 @@
-update=Friday, May 22, 2015 'PMt' 07:59:30 PM
+update=Saturday, July 11, 2015 'PMt' 02:39:00 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,18 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=/Users/tom/Projects/dogcage/dogcage_kicad/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -58,15 +70,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=/Users/tom/Dropbox/Projects/Kicad/Libraries/tomlib
 LibName31=/Users/tom/Dropbox/Projects/Kicad/Libraries/teensylc
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=/Users/tom/Projects/dogcage/dogcage_kicad/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
-[general]
-version=1
+LibName32=/Users/tom/Dropbox/Projects/Kicad/Libraries/kicad-ESP8266/ESP8266

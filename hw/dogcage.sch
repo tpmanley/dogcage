@@ -113,28 +113,6 @@ F 3 "" H 5300 3800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 P4
-U 1 1 553C4802
-P 5750 3400
-F 0 "P4" H 5750 3550 50  0000 C CNN
-F 1 "Door Sensor" V 5850 3400 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 5750 3400 60  0001 C CNN
-F 3 "" H 5750 3400 60  0000 C CNN
-	1    5750 3400
-	-1   0    0    -1  
-$EndComp
-$Comp
-L GND #PWR13
-U 1 1 553C48BE
-P 5950 3700
-F 0 "#PWR13" H 5950 3450 50  0001 C CNN
-F 1 "GND" H 5950 3550 50  0000 C CNN
-F 2 "" H 5950 3700 60  0000 C CNN
-F 3 "" H 5950 3700 60  0000 C CNN
-	1    5950 3700
-	-1   0    0    -1  
-$EndComp
-$Comp
 L TIP120 Q1
 U 1 1 553C49B0
 P 7350 4750
@@ -522,8 +500,6 @@ Wire Wire Line
 Wire Wire Line
 	8850 1050 8850 1300
 Wire Wire Line
-	5950 3450 5950 3700
-Wire Wire Line
 	1700 1150 1750 1150
 Wire Wire Line
 	2350 950  2350 1150
@@ -661,13 +637,6 @@ Wire Wire Line
 Wire Wire Line
 	8400 3800 6700 3800
 Connection ~ 6700 3800
-Wire Wire Line
-	6400 2600 6650 2600
-Wire Wire Line
-	5950 3350 6400 3350
-Wire Wire Line
-	6400 3350 6400 2600
-Connection ~ 6400 2600
 Connection ~ 2450 2950
 Wire Wire Line
 	6650 1400 6200 1400

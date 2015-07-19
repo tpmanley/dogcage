@@ -1,17 +1,31 @@
-Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Sunday, May 17, 2015 'PMt' 02:16:13 PM
+Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, July 18, 2015 'PMt' 11:40:44 PM
 
 BeginCmp
-TimeStamp = /553C53E8;
+TimeStamp = /55AB32EC;
 Reference = C1;
-ValeurCmp = 10uF;
-IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_11x5mm_RM2;
+ValeurCmp = .1uF;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
 EndCmp
 
 BeginCmp
-TimeStamp = /553C5452;
+TimeStamp = /55AB35B2;
 Reference = C2;
 ValeurCmp = 10uF;
-IdModule  = Capacitors_Elko_ThroughHole:Elko_vert_11x5mm_RM2;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55AB367C;
+Reference = C3;
+ValeurCmp = 10uF;
+IdModule  = Capacitors_SMD:C_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A180AB;
+Reference = C4;
+ValeurCmp = 100uF;
+IdModule  = Capacitors_SMD:c_elec_3x5.3;
 EndCmp
 
 BeginCmp
@@ -22,66 +36,31 @@ IdModule  = Connect:BARREL_JACK;
 EndCmp
 
 BeginCmp
-TimeStamp = /553D18EC;
-Reference = D1;
-ValeurCmp = Assoc LED;
-IdModule  = LEDs:LED-3MM;
-EndCmp
-
-BeginCmp
 TimeStamp = /5541A2D5;
-Reference = D2;
+Reference = D1;
 ValeurCmp = 1N4001;
 IdModule  = Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10;
 EndCmp
 
 BeginCmp
-TimeStamp = /5542EC6F;
-Reference = M1;
-ValeurCmp = XBEE;
-IdModule  = modules:xbee;
-EndCmp
-
-BeginCmp
-TimeStamp = /553C4802;
-Reference = P1;
-ValeurCmp = Door Sensor;
-IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+TimeStamp = /553D18EC;
+Reference = D2;
+ValeurCmp = Assoc LED;
+IdModule  = LEDs:LED-0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /553C4577;
-Reference = P2;
-ValeurCmp = Servo;
+Reference = P1;
+ValeurCmp = Door;
 IdModule  = Pin_Headers:Pin_Header_Straight_1x03;
 EndCmp
 
 BeginCmp
-TimeStamp = /5542ECE2;
-Reference = P3;
-ValeurCmp = CONN_01X10;
-IdModule  = Pin_Headers:Pin_Header_Straight_1x10;
-EndCmp
-
-BeginCmp
-TimeStamp = /5542F1C9;
-Reference = P4;
-ValeurCmp = CONN_01X10;
-IdModule  = Pin_Headers:Pin_Header_Straight_1x10;
-EndCmp
-
-BeginCmp
-TimeStamp = /55453354;
-Reference = P5;
-ValeurCmp = CONN_01X14;
-IdModule  = Pin_Headers:Pin_Header_Straight_1x14;
-EndCmp
-
-BeginCmp
-TimeStamp = /55453273;
-Reference = P7;
-ValeurCmp = CONN_01X14;
-IdModule  = Pin_Headers:Pin_Header_Straight_1x14;
+TimeStamp = /559DEAB0;
+Reference = P2;
+ValeurCmp = Lock;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x03;
 EndCmp
 
 BeginCmp
@@ -92,10 +71,52 @@ IdModule  = Power_Integrations:TO-220;
 EndCmp
 
 BeginCmp
-TimeStamp = /553D19C7;
+TimeStamp = /559DEA4D;
+Reference = Q2;
+ValeurCmp = TIP120;
+IdModule  = Power_Integrations:TO-220;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A89BD3;
 Reference = R1;
+ValeurCmp = 10K;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A8A080;
+Reference = R2;
+ValeurCmp = 10K;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /553D19C7;
+Reference = R3;
 ValeurCmp = 330;
-IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A8A022;
+Reference = R4;
+ValeurCmp = 10K;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /558214B8;
+Reference = R5;
+ValeurCmp = 470;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /559DEC4E;
+Reference = R6;
+ValeurCmp = 470;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
 EndCmp
 
 BeginCmp
@@ -106,17 +127,38 @@ IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
 EndCmp
 
 BeginCmp
-TimeStamp = /553C5246;
+TimeStamp = /55A19609;
+Reference = SW2;
+ValeurCmp = SW_PUSH;
+IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A1671F;
 Reference = U1;
+ValeurCmp = LD1117S50TR;
+IdModule  = SMD_Packages:SOT-223;
+EndCmp
+
+BeginCmp
+TimeStamp = /553C5246;
+Reference = U2;
 ValeurCmp = LD1117S33TR;
 IdModule  = SMD_Packages:SOT-223;
 EndCmp
 
 BeginCmp
 TimeStamp = /553C448F;
-Reference = U2;
+Reference = U3;
 ValeurCmp = TEENSYLC;
 IdModule  = modules:Teensy-3.1;
+EndCmp
+
+BeginCmp
+TimeStamp = /55A18EAE;
+Reference = U4;
+ValeurCmp = ESP-01v090;
+IdModule  = ESP8266:ESP-01;
 EndCmp
 
 EndListe

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, July 18, 2015 'PMt' 11:40:44 PM
+Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, July 25, 2015 'PMt' 03:15:12 PM
 
 BeginCmp
 TimeStamp = /55AB32EC;
@@ -64,17 +64,17 @@ IdModule  = Pin_Headers:Pin_Header_Straight_1x03;
 EndCmp
 
 BeginCmp
-TimeStamp = /553C49B0;
+TimeStamp = /55B3E58A;
 Reference = Q1;
-ValeurCmp = TIP120;
-IdModule  = Power_Integrations:TO-220;
+ValeurCmp = Darl_NPN;
+IdModule  = SMD_Packages:DPAK-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /559DEA4D;
+TimeStamp = /55B3EB3C;
 Reference = Q2;
-ValeurCmp = TIP120;
-IdModule  = Power_Integrations:TO-220;
+ValeurCmp = Darl_NPN;
+IdModule  = SMD_Packages:DPAK-2;
 EndCmp
 
 BeginCmp
@@ -123,14 +123,14 @@ BeginCmp
 TimeStamp = /553C46F2;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
+IdModule  = Buttons_Switches_SMD:SW_SPST_FSMSM;
 EndCmp
 
 BeginCmp
 TimeStamp = /55A19609;
 Reference = SW2;
 ValeurCmp = SW_PUSH;
-IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
+IdModule  = Buttons_Switches_SMD:SW_SPST_FSMSM;
 EndCmp
 
 BeginCmp

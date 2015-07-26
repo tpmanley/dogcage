@@ -591,24 +591,16 @@ Wire Wire Line
 	6650 2400 5650 2400
 Wire Wire Line
 	5650 2400 5650 2600
-Wire Wire Line
-	6650 2500 6200 2500
-Wire Wire Line
-	6650 2600 6200 2600
 Text Label 6350 2400 0    60   ~ 0
 D10
-Text Label 6350 2500 0    60   ~ 0
-D11
-Text Label 6350 2600 0    60   ~ 0
-D12
 Wire Wire Line
 	6900 4100 6900 4350
 Text Label 6900 4300 1    60   ~ 0
-D11
+D14
 Wire Wire Line
 	8400 4100 8400 4350
 Text Label 8400 4300 1    60   ~ 0
-D12
+D15
 NoConn ~ 6650 2100
 NoConn ~ 6650 2000
 NoConn ~ 6650 1800
@@ -616,8 +608,6 @@ NoConn ~ 6650 1900
 NoConn ~ 6650 2200
 NoConn ~ 6650 2300
 NoConn ~ 7850 3100
-NoConn ~ 8650 2500
-NoConn ~ 8650 2400
 NoConn ~ 8650 2300
 NoConn ~ 8650 2200
 NoConn ~ 8650 2100
@@ -781,4 +771,14 @@ F 3 "" H 8750 4700 60  0000 C CNN
 	1    8750 4750
 	1    0    0    -1  
 $EndComp
+NoConn ~ 6650 2600
+NoConn ~ 6650 2500
+Wire Wire Line
+	8650 2500 9000 2500
+Wire Wire Line
+	8650 2400 9000 2400
+Text Label 8800 2400 0    60   ~ 0
+D15
+Text Label 8800 2500 0    60   ~ 0
+D14
 $EndSCHEMATC

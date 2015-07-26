@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, July 25, 2015 'PMt' 03:15:12 PM
+Cmp-Mod V01 Created by Cvpcb (2015-05-10 BZR 5649)-product   date = Saturday, July 25, 2015 'PMt' 09:02:54 PM
 
 BeginCmp
 TimeStamp = /55AB32EC;
@@ -32,7 +32,7 @@ BeginCmp
 TimeStamp = /553C403C;
 Reference = CON1;
 ValeurCmp = BARREL_JACK;
-IdModule  = Connect:BARREL_JACK;
+IdModule  = modules:BARREL_JACK-ROUND_TH;
 EndCmp
 
 BeginCmp
@@ -123,7 +123,7 @@ BeginCmp
 TimeStamp = /553C46F2;
 Reference = SW1;
 ValeurCmp = SW_PUSH;
-IdModule  = Buttons_Switches_SMD:SW_SPST_FSMSM;
+IdModule  = Buttons_Switches_ThroughHole:SW_PUSH_SMALL;
 EndCmp
 
 BeginCmp
